@@ -286,7 +286,7 @@ import { gameGetQuestionAnswers } from '~/api';
 </script>
 <template>
     <div class="flex flex-col w-screen items-center max-h-90vh relative z-1000">
-    <div v-if="question.meta && !question.meta.easy" class="flex items-center gap-x-9px scale-90 sm:hidden" :class="{'pointer-events-none!': answerEmitting }">
+    <div v-if="question.meta && !question.meta.easy" class="flex items-center gap-x-9px scale-90 sm:hidden w-100%" :class="{'pointer-events-none!': answerEmitting }">
         <div class="timer bg-white lt-xxxl:h-55px! lt-xxxl:max-w-310px q-shadow-sm lt-xxxl:p-10px!">
           <img class="w-24px h-24px lt-xxxl:w-18px lt-xxxl:h-18px" src="/img/clock.png" alt="таймер">
           <div class="time lt-xxxl:h-13px! lt-xxxl:w-220px! lt-xxxl:min-w-220px! bg-#D1EAD8!">
@@ -497,6 +497,7 @@ import { gameGetQuestionAnswers } from '~/api';
 }
 .timer {
   display: flex;
+  gap: 4px;
   align-items: center;
   justify-content: space-between;
   padding: 25.5px 24px;

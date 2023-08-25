@@ -33,8 +33,8 @@
         </a>
         <div class="absolute bottom-0 left-50% translate-x-[-50%]">
             <img :src="`/img/characters/pushkin 5.png`" class="min-w-740px lt-xxxl:min-w-460px lt-xxxl:w-460px lt-lg:min-w-600px absolute bottom-0 left-[-130px] lt-lg:left-[-140px] lt-xxxl:left-0 z-1" >
-            <div class="w-600px lt-lg:w-420px flex flex-col p-42px lt-lg:p-24px bg-white q-shadow-md__light-green relative z-2 mb-142px">
-                <img :src="`/img/characters/pushkin_hand.png`" class="min-w-152px w-152px lt-xxxl:hidden absolute right-[-3px] z-3 top-[calc(-100%)]" >
+            <div class="w-600px  lt-sm:w-284px  lt-lg:w-420px flex flex-col p-42px lt-lg:p-24px bg-white q-shadow-md__light-green relative z-2 mb-142px">
+                <img :src="`/img/characters/pushkin_hand.png`" class="min-w-152px w-152px absolute right-[-3px] z-3 top-[calc(-100%)]" >
                 <p class="font-500 text-36px lt-lg:text-30px lt-xxxl:text-22px leading-130% text-black">{{ Math.random() > 0.5 ? 'Время тю-тю!' : 'Ой, ой! Время вышло!' }}</p>
                 <p class="font-400 text-26px lt-xxxl:text-18px leading-130% text-black mt-24px lt-lg:mt-18px lt-lg:w-366px">Не расстраивайся, ты можешь пройти квиз заново и проверить свои знания</p>
                 <button @click="goToStart" class="p-22px lt-xxxl:p-12px bg-#71CB8A w-350px lt-xxxl:w-230px mt-32px lt-lg:mt-26px q-shadow-sm__lightest-green">
