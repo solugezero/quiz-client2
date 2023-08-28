@@ -9,7 +9,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
 import Inspect from "vite-plugin-inspect";
 import Unocss from "unocss/vite";
-
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig(({ mode }) => {
 	console.log('ENV_MODE: ', mode)
 	return {
@@ -32,7 +32,10 @@ export default defineConfig(({ mode }) => {
 						? []
 						: ['**/dev/*.vue'],
 			}),
-			Layouts(),
+			Layouts({
+				layoutsDirs: 'src/layouts',
+				defaultLayout: 'default'
+			  }),
 			AutoImport({
 				imports: [
 					"vue",
@@ -46,6 +49,7 @@ export default defineConfig(({ mode }) => {
 						axios: [["default", "axios"]],
 					},
 				],
+				resolvers: [ElementPlusResolver()],
 				dts: "src/auto-imports.d.ts",
 				dirs: ["src/composables", "src/store/**", "src/hooks/**", "src/keys/**"],
 				vueTemplate: true,
@@ -54,6 +58,7 @@ export default defineConfig(({ mode }) => {
 			Components({
 				extensions: ["vue"],
 				include: [/\.vue$/, /\.vue\?vue/],
+				resolvers: [ElementPlusResolver()],
 				dts: "src/components.d.ts",
 				deep: true,
 				directoryAsNamespace: true,

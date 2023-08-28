@@ -43,7 +43,7 @@ const goToStart = () => {
 	gameStarted.value = false;
 	currentPoints.value = 0;
 }
-
+const getValidRoute = computed(()=> useRoute().name === 'admin')
 onMounted(() => {
 	if (window) {
 		setTimeout(function(){			
@@ -65,7 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<img v-if="!gameStarted || !easyMode" @click="goToStart" :src="logo" class="fixed left-40px top-40px z-1000 cursor-pointer lt-xxl:w-42px lt-xxl:h-28px" >
+	<img v-if="!gameStarted || !easyMode" v-show="!getValidRoute" @click="goToStart" :src="logo" class="fixed left-40px top-40px z-1000 cursor-pointer lt-xxl:w-42px lt-xxl:h-28px" >
 	<router-view v-slot="{ Component }">
 		<transition
 			name="fade"
